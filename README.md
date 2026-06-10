@@ -1,16 +1,34 @@
-# React + Vite
+# Печатный салон «Полиграфия» 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современный одностраничный веб-сайт (Landing Page) для локального печатного салона в Владивостоке. Сайт разработан с акцентом на высокую скорость загрузки, минималистичный дизайн и удобство пользователя как на десктопах, так и на мобильных устройствах.
 
-Currently, two official plugins are available:
+##  Особенности проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Главный экран (Hero Section):** Адаптивный баннер с темным оверлеем для идеальной читаемости текста поверх любых фоновых изображений.
+- **Слайдер работ:** Интерактивная карусель выполненных заказов с возможностью детального просмотра изображений в модальном окне.
+- **Сетка услуг:** Наглядный каталог «Что мы печатаем» с графическими заглушками и актуальными ценами.
+- **Интерактивная карта:** Быстрый поиск контактов салона с интеграцией карты для удобства клиентов.
+- **Чистая архитектура:** Стили и статические данные (массивы услуг/слайдов) вынесены в отдельные изолированные модули для удобства дальнейшей поддержки.
 
-## React Compiler
+##  Стек технологий
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React 18 (Функциональные компоненты, Hooks)
+- **Сборщик:** Vite (Быстрая сборка и Hot Module Replacement)
+- **Карусели:** Swiper.js (React-модули Autoplay, Navigation, Breakpoints)
+- **Стилизация:** JavaScript-инлайн стили (модульная структура)
+- **Линтинг:** ESLint (Строгий контроль качества кода)
 
-## Expanding the ESLint configuration
+##  Структура проекта
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+my-printing-site/
+├── public/                 # Статические ресурсы (иконки, favicon)
+├── src/
+│   ├── assets/             # Изображения, логотипы и медиа-файлы
+│   ├── servicesData.js     # Изолированные данные для каталога услуг
+│   ├── styles.js           # Вынесенный глобальный объект стилей компонента
+│   ├── App.jsx             # Главный компонент приложения (логика и разметка)
+│   └── main.jsx            # Точка входа React
+├── index.html              # Корневой HTML-файл проекта
+├── package.json            # Зависимости и скрипты проекта
+└── README.md               # Документация проекта

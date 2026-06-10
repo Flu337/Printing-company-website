@@ -8,6 +8,7 @@ import { servicesData } from "./servicesData";
 import "swiper/css";
 import "swiper/css/navigation";
 import placeholderLogo from "./assets/logo.png";
+import telegramIcon from "./assets/icons8-телеграм.svg";
 
 const App = () => {
   const [activeModalImg, setActiveModalImg] = useState(null);
@@ -35,7 +36,7 @@ const App = () => {
             }}
           >
             <img
-              src="../src/assets/logo.png"
+              src={placeholderLogo}
               alt="Логотип"
               style={{
                 height: "170px",
@@ -298,7 +299,7 @@ const App = () => {
                 rel="noreferrer"
                 style={styles.tgBtn}
               >
-                <img src="../src/assets/icons8-телеграм.svg" alt="tg" />
+                <img src={telegramIcon} alt="tg" />
               </a>
             </div>
 

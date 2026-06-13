@@ -421,10 +421,10 @@ const App = () => {
                 <strong>Адрес:</strong> ул. Щорса, 1А, Партизанск
               </p>
               <p style={styles.contactParam}>
-                <strong>Телефон:</strong> +7 (991) 496-79-12
+                <strong>Телефон:</strong> +7 (914) 325-62-11
               </p>
               <p style={styles.contactParam}>
-                <strong>Email:</strong> polygrafiya_maria@mail.ru
+                <strong>Email:</strong> shmatko_0@mail.ru
               </p>
               <p style={styles.contactParam}>
                 <strong>Режим работы:</strong> Пн-Пт: 08:30–12:00, 13:00–17:00

@@ -1,44 +1,44 @@
 // Объект стилей для компонентов (React / React Native StyleSheet)
 export const styles = {
   // ---------- ГЛОБАЛЬНЫЕ СТИЛИ СТРАНИЦЫ ----------
-  // Основной контейнер страницы (body)
+  // Основной контейнер страницы (div-обёртка всего приложения)
   body: {
-    color: "#1a1a1a", // Цвет текста
-    backgroundColor: "#ffffff", // Фон страницы
+    color: "#1a1a1a",
+    backgroundColor: "#ffffff",
     fontFamily: '"Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-    lineHeight: "1.6", // Межстрочный интервал
-    paddingTop: "70px", // Отступ сверху, чтобы контент не заезжал под фиксированную шапку
+    lineHeight: "1.6",
+    paddingTop: "70px",
     width: "100%",
   },
 
-  // Общий контейнер-центровщик для секций
+  // Центрирующий контейнер для секций (О нас, Услуги, Контакты)
   container: {
     width: "85%",
-    maxWidth: "1200px", // Максимальная ширина для больших экранов
-    margin: "0 auto", // Центрирование по горизонтали
-    padding: "60px 0", // Вертикальные отступы внутри секции
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: "60px 0",
   },
 
   // ---------- ШАПКА (HEADER) ----------
-  // Фиксированная верхняя панель
+  // Фиксированная шапка сайта (элемент <header>)
   header: {
-    position: "fixed", // Прилипает к верху при прокрутке
+    position: "fixed",
     top: 0,
     left: 0,
     width: "100%",
     height: "90px",
     backgroundColor: "#ffffff",
-    boxShadow: "0 2px 10px rgba(0,0,0,0.05)", // Лёгкая тень
-    zIndex: 1000, // Поверх остального контента
+    boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
+    zIndex: 1000,
     display: "flex",
-    alignItems: "center", // Вертикальное выравнивание содержимого
+    alignItems: "center",
     boxSizing: "border-box",
   },
 
-  // Обёртка для содержимого шапки (логотип + навигация)
+  // Контейнер для логотипа и навигации внутри шапки
   navContainer: {
     display: "flex",
-    justifyContent: "space-between", // Лого слева, ссылки справа
+    justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
     maxWidth: "1200px",
@@ -48,7 +48,7 @@ export const styles = {
     boxSizing: "border-box",
   },
 
-  // Ссылка-логотип
+  // Ссылка-обёртка для логотипа
   logo: {
     display: "flex",
     alignItems: "center",
@@ -58,58 +58,58 @@ export const styles = {
   // Изображение логотипа
   logoImg: {
     height: "80px",
-    width: "auto", // Сохраняет пропорции
+    width: "auto",
     display: "block",
-    objectFit: "contain", // Вписывается в контейнер без обрезки
+    objectFit: "contain",
   },
 
   // ---------- НАВИГАЦИЯ ----------
-  // Блок со ссылками
+  // Блок с навигационными ссылками (элемент <nav>)
   navLinks: {
     display: "flex",
-    gap: "30px", // Расстояние между пунктами
+    gap: "30px",
   },
 
-  // Отдельная ссылка в навигации
+  // Отдельная ссылка в навигации (элемент <a>)
   navLink: {
     textDecoration: "none",
     color: "#333",
     fontWeight: "500",
     fontSize: "1rem",
-    transition: "color 0.2s ease", // Плавная смена цвета при наведении
+    transition: "color 0.2s ease",
   },
 
   // ---------- ГЕРОЙ-СЕКЦИЯ (ПЕРВЫЙ ЭКРАН) ----------
-  // Контейнер hero-блока с фоновым изображением
+  // Контейнер главного баннера (секция #hero)
   hero: {
     position: "relative",
-    minHeight: "80vh", // Минимальная высота — 80% высоты экрана
+    minHeight: "80vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover", // Фон на весь блок
-    padding: "120px 20px 80px 20px", // Учитываем высоту шапки
+    backgroundSize: "cover",
+    padding: "120px 20px 80px 20px",
     boxSizing: "border-box",
     overflow: "hidden",
   },
 
-  // Затемняющая подложка поверх фона (для читаемости текста)
+  // Затемняющий слой поверх фонового изображения
   heroOverlay: {
     position: "absolute",
     top: 0,
     left: 0,
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.4)", // Полупрозрачный чёрный
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
     zIndex: 1,
   },
 
-  // Контейнер для текста и кнопки поверх overlay
+  // Контейнер для текста и кнопки внутри героя
   heroContentContainer: {
     position: "relative",
-    zIndex: 2, // Поверх overlay
+    zIndex: 2,
     maxWidth: "800px",
     width: "100%",
     textAlign: "center",
@@ -118,17 +118,17 @@ export const styles = {
     alignItems: "center",
   },
 
-  // Заголовок в hero
+  // Главный заголовок в герое
   heroTitle: {
     fontSize: "2.8rem",
     fontWeight: "800",
     color: "#ffffff",
     marginBottom: "20px",
     lineHeight: "1.2",
-    textShadow: "0 2px 4px rgba(0,0,0,0.2)", // Тень для читаемости
+    textShadow: "0 2px 4px rgba(0,0,0,0.2)",
   },
 
-  // Подзаголовок в hero
+  // Подзаголовок в герое
   heroSubtitle: {
     fontSize: "1.25rem",
     color: "#f0f0f0",
@@ -138,19 +138,20 @@ export const styles = {
     textShadow: "0 1px 3px rgba(0,0,0,0.2)",
   },
 
-  // Кнопка призыва к действию (CTA)
+  // Кнопка призыва к действию в герое
   btn: {
     display: "inline-block",
-    background: "linear-gradient(135deg, #0072ff 0%, #00c6ff 100%)", // Градиент
+    background: "linear-gradient(135deg, #0072ff 0%, #00c6ff 100%)",
     color: "white",
     padding: "14px 35px",
     textDecoration: "none",
-    borderRadius: "30px", // Полностью скруглённые края
+    borderRadius: "30px",
     fontWeight: "bold",
     boxShadow: "0 4px 15px rgba(0, 114, 255, 0.3)",
   },
 
   // ---------- ЗАГОЛОВКИ СЕКЦИЙ ----------
+  // Заголовок h2 для всех секций (О нас, Услуги, Работы, Контакты)
   h2: {
     textAlign: "center",
     fontSize: "2.3rem",
@@ -158,42 +159,42 @@ export const styles = {
   },
 
   // ---------- БЛОК «О НАС» (ABOUT) ----------
-  // Сетка из двух колонок
+  // Сетка из двух колонок в секции "О нас"
   aboutGrid: {
     display: "flex",
     gap: "50px",
     alignItems: "center",
   },
 
-  // Текстовая колонка
+  // Текстовая колонка в секции "О нас"
   aboutText: {
     flex: 1,
   },
 
-  // Обычный абзац
+  // Обычный абзац в секции "О нас"
   p: {
     marginBottom: "15px",
     fontSize: "1.1rem",
     color: "#333",
   },
 
-  // Карточки ключевых особенностей (преимуществ)
+  // Контейнер с карточками преимуществ (Скорость, Качество, Тираж)
   features: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", // Адаптивная сетка
+    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
     gap: "20px",
     marginTop: "30px",
   },
 
-  // Одна карточка преимущества
+  // Карточка одного преимущества
   featureCard: {
     background: "#f8f9fa",
     padding: "20px",
     borderRadius: "8px",
-    borderTop: "4px solid #0072ff", // Цветная полоса сверху
+    borderTop: "4px solid #0072ff",
   },
 
-  // Заголовок внутри карточки
+  // Заголовок внутри карточки преимущества
   featureTitle: {
     marginBottom: "8px",
     fontSize: "1.1rem",
@@ -206,7 +207,7 @@ export const styles = {
   },
 
   // ---------- СЕКЦИЯ УСЛУГ ----------
-  // Фон секции
+  // Фон всей секции "Услуги"
   servicesSection: {
     backgroundColor: "#f8f9fa",
     width: "100%",
@@ -219,7 +220,7 @@ export const styles = {
     gap: "30px",
   },
 
-  // Карточка услуги
+  // Карточка отдельной услуги
   serviceCard: {
     background: "white",
     padding: "30px",
@@ -228,10 +229,10 @@ export const styles = {
     boxShadow: "0 4px 20px rgba(0,0,0,0.03)",
     display: "flex",
     flexDirection: "column",
-    minHeight: "220px", // Минимальная высота для единообразия
+    minHeight: "220px",
   },
 
-  // Название услуги
+  // Название услуги внутри карточки
   serviceTitle: {
     fontSize: "1.25rem",
     marginBottom: "10px",
@@ -242,7 +243,7 @@ export const styles = {
   serviceDesc: {
     color: "#555",
     fontSize: "0.95rem",
-    flexGrow: 1, // Занимает доступное пространство, выравнивая цену снизу
+    flexGrow: 1,
   },
 
   // Цена услуги
@@ -253,16 +254,57 @@ export const styles = {
     fontSize: "1.15rem",
   },
 
+  // Обёртка для изображения в карточке услуги
+  cardImgWrapper: {
+    width: "100%",
+    height: "140px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "8px",
+    marginBottom: "15px",
+    padding: "10px",
+    boxSizing: "border-box",
+  },
+
+  // Изображение-заглушка в карточке услуги
+  cardImgPlaceholder: {
+    height: "170px",
+    width: "auto",
+    objectFit: "contain",
+    opacity: 0.6,
+    borderRadius: "8px",
+  },
+
+  // Дополнительные стили для анимации появления карточки
+  serviceCardAnimated: {
+    animation: "fadeIn 0.5s ease-out forwards",
+  },
+
+  // Кнопка "Показать ещё" / "Скрыть" в секции услуг
+  loadMoreBtn: {
+    backgroundColor: "#0085ff",
+    color: "#ffffff",
+    border: "none",
+    padding: "12px 30px",
+    fontSize: "1rem",
+    fontWeight: "600",
+    borderRadius: "25px",
+    cursor: "pointer",
+    transition: "all 0.2s ease",
+    boxShadow: "0 4px 15px rgba(0, 133, 255, 0.3)",
+  },
+
   // ---------- СЕКЦИЯ «НАШИ РАБОТЫ» (СЛАЙДЕР) ----------
-  // Обёртка секции
+  // Обёртка секции "Примеры работ"
   worksSection: {
     padding: "60px 0",
     backgroundColor: "#ffffff",
     width: "100%",
-    overflow: "hidden", // Скрывает лишнее, если слайды выходят за границы
+    overflow: "hidden",
   },
 
-  // Обёртка слайдера (относительное позиционирование для стрелок)
+  // Обёртка слайдера с относительным позиционированием для стрелок
   sliderWrapper: {
     position: "relative",
     width: "100%",
@@ -270,7 +312,7 @@ export const styles = {
     padding: "0",
   },
 
-  // Контейнер самого Swiper (если используется Swiper.js)
+  // Контейнер Swiper (если используется Swiper.js)
   swiperContainer: {
     padding: "20px 0",
     width: "100%",
@@ -278,25 +320,25 @@ export const styles = {
     WebkitTransitionTimingFunction: "linear",
   },
 
-  // Карточка одного слайда (превью работы)
+  // Карточка одного слайда в галерее работ
   slideCard: {
     backgroundColor: "#f8f9fa",
     borderRadius: "16px",
     overflow: "hidden",
     boxShadow: "0 4px 15px rgba(0,0,0,0.05)",
     cursor: "pointer",
-    transition: "transform 0.3s ease", // Анимация при наведении
+    transition: "transform 0.3s ease",
   },
 
-  // Изображение в слайде
+  // Изображение внутри слайда
   slideImg: {
     width: "100%",
     height: "350px",
-    objectFit: "cover", // Заполняет кадр, обрезая лишнее
+    objectFit: "cover",
     display: "block",
   },
 
-  // Кнопки навигации (стрелки влево/вправо)
+  // Кнопки навигации слайдера (стрелки влево/вправо)
   navBtn: {
     position: "absolute",
     top: "50%",
@@ -317,7 +359,7 @@ export const styles = {
   },
 
   // ---------- МОДАЛЬНОЕ ОКНО (ПРОСМОТР ИЗОБРАЖЕНИЯ) ----------
-  // Затемнённый фон
+  // Затемнённый фон модального окна
   modalOverlay: {
     position: "fixed",
     top: 0,
@@ -325,20 +367,20 @@ export const styles = {
     width: "100vw",
     height: "100vh",
     backgroundColor: "rgba(0, 0, 0, 0.85)",
-    zIndex: 2000, // Поверх всего
+    zIndex: 2000,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
   },
 
-  // Контейнер изображения в модалке
+  // Контейнер для увеличенного изображения
   modalContent: {
     position: "relative",
     maxWidth: "90%",
     maxHeight: "90%",
   },
 
-  // Само увеличенное изображение
+  // Увеличенное изображение в модальном окне
   modalImg: {
     maxWidth: "100%",
     maxHeight: "85vh",
@@ -346,10 +388,10 @@ export const styles = {
     boxShadow: "0 4px 25px rgba(0,0,0,0.5)",
   },
 
-  // Кнопка закрытия (крестик)
+  // Кнопка закрытия модального окна (крестик)
   modalClose: {
     position: "absolute",
-    top: "-45px", // Вынесена чуть выше изображения
+    top: "-45px",
     right: "0",
     background: "none",
     border: "none",
@@ -359,6 +401,7 @@ export const styles = {
   },
 
   // ---------- СЕКЦИЯ КОНТАКТОВ ----------
+  // Фон секции "Контакты"
   contactsSection: {
     padding: "60px 0",
     backgroundColor: "#f8f9fa",
@@ -366,7 +409,7 @@ export const styles = {
     width: "100%",
   },
 
-  // Сетка из двух колонок: информация + карта
+  // Сетка из двух колонок (информация + карта)
   contactGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -374,37 +417,37 @@ export const styles = {
     alignItems: "center",
   },
 
-  // Блок с текстовыми контактами
+  // Блок с текстовыми контактами (адрес, телефон, email)
   contactInfo: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
   },
 
-  // Строка с одним контактным параметром (телефон, почта и т.п.)
+  // Строка с одним контактным параметром
   contactParam: {
     marginBottom: "15px",
     fontSize: "1.1rem",
     color: "#333",
   },
 
-  // Кнопка Telegram
+  // Кнопка для связи в Telegram
   tgBtn: {
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
     gap: "10px",
-    backgroundColor: "#229ED9", // Фирменный цвет Telegram
+    backgroundColor: "#229ED9",
     color: "white",
     padding: "14px 28px",
     textDecoration: "none",
     borderRadius: "30px",
     fontWeight: "bold",
-    alignSelf: "flex-start", // Не растягивается на всю ширину
+    alignSelf: "flex-start",
     boxShadow: "0 4px 12px rgba(34, 158, 217, 0.3)",
   },
 
-  // Контейнер для карты (iframe или компонент)
+  // Контейнер для карты (iframe Яндекс.Карты)
   mapContainer: {
     width: "100%",
     height: "400px",
@@ -416,6 +459,7 @@ export const styles = {
   },
 
   // ---------- ПОДВАЛ (FOOTER) ----------
+  // Подвал сайта (элемент <footer>)
   footer: {
     backgroundColor: "#111111",
     color: "#888",
@@ -423,28 +467,5 @@ export const styles = {
     padding: "25px 0",
     fontSize: "0.9rem",
     width: "100%",
-  },
-
-  // ---------- ВСПОМОГАТЕЛЬНЫЕ СТИЛИ (ЗАГЛУШКИ ИЗОБРАЖЕНИЙ) ----------
-  // Обёртка для иконки/логотипа в карточке (например, в услугах)
-  cardImgWrapper: {
-    width: "100%",
-    height: "140px",
-    backgroundColor: "#f9f9f9",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: "8px",
-    marginBottom: "15px",
-    padding: "10px",
-    boxSizing: "border-box",
-  },
-
-  // Изображение-заглушка внутри обёртки (например, иконка сервиса)
-  cardImgPlaceholder: {
-    height: "100%",
-    width: "auto",
-    objectFit: "contain", // Вписывается без искажений
-    opacity: 0.6, // Полупрозрачное, как водяной знак
   },
 };

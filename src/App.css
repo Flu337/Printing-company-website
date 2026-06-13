@@ -11,3 +11,25 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+/*  стрелоки слайдера  */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #0085ff !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px !important; /* стрелки аккуратного размера */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -102,7 +102,7 @@ export const styles = {
     left: 0,
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.4)",
+
     zIndex: 1,
   },
 
@@ -272,7 +272,7 @@ export const styles = {
     height: "170px",
     width: "auto",
     objectFit: "contain",
-    opacity: 0.6,
+
     borderRadius: "8px",
   },
 
@@ -445,6 +445,24 @@ export const styles = {
     fontWeight: "bold",
     alignSelf: "flex-start",
     boxShadow: "0 4px 12px rgba(34, 158, 217, 0.3)",
+  },
+  maxBtn: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "10px",
+    // Трёхцветный градиент под углом 45 градусов
+    background:
+      "linear-gradient(45deg, rgb(0, 110, 255) 0%, rgb(34, 158, 217) 50%, rgb(138, 43, 226) 100%)",
+    color: "white",
+    padding: "14px 28px",
+    textDecoration: "none",
+    borderRadius: "30px",
+    fontWeight: "bold",
+    alignSelf: "flex-start",
+    // Тень, смешанная из синего и фиолетового
+    boxShadow: "0 6px 18px rgba(34, 158, 217, 0.35)",
+    transition: "transform 0.2s ease, box-shadow 0.2s ease",
   },
 
   // Контейнер для карты (iframe Яндекс.Карты)

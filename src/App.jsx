@@ -195,6 +195,18 @@ const App = () => {
                 <h3 style={styles.serviceTitle}>{item.title}</h3>
                 <p style={styles.serviceDesc}>{item.desc}</p>
                 <div style={styles.price}>{item.price}</div>
+                <p
+                  style={{
+                    fontSize: "0.9rem",
+                    backgroundColor: "#f0f0f0",
+                    padding: "4px 8px",
+                    borderRadius: "4px",
+                    color: "#333",
+                    marginTop: "10px",
+                  }}
+                >
+                  нажми чтобы увидеть больше
+                </p>
               </div>
             ))}
           </div>

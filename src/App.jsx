@@ -11,7 +11,6 @@ import "swiper/css/navigation";
 import placeholderLogo from "./assets/logo.png";
 import telegramIcon from "./assets/icons8-телеграм.svg";
 import heroLogo from "./assets/rgb.png";
-import maxIcon from "./assets/max.png";
 
 const App = () => {
   const [activeProduct, setActiveProduct] = useState(null);
@@ -460,15 +459,6 @@ const App = () => {
                   style={styles.tgBtn}
                 >
                   <img src={telegramIcon} alt="tg" />
-                </a>
-
-                <a
-                  href="https://t.me/PolygrafiyaPartizansk"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={styles.maxBtn}
-                >
-                  <img src={maxIcon} alt="max" style={{ width: 48 }} />
                 </a>
               </div>
             </div>

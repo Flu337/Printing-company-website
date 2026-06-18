@@ -1,70 +1,116 @@
 // src/servicesData.js
 
-// === 1. ИМПОРТ ВСЕХ КАРТИНОК ИЗ ПАПКИ ASSETS (кроме hero.png, icons8-telegram.svg, logo.png) ===
-import treeOrMetal from "./assets/Tree_or_metal.jpg";
-import calendar from "./assets/Calendar.jpg";
-import notepad from "./assets/Notepad.jpg";
-import notepad2 from "./assets/Notepad-2.jpg";
-import tree2 from "./assets/Tree-2.jpg";
-import businessCard from "./assets/BusinessCard.jpg";
+// =========================================================================
+// 1. ИМПОРТ РАСШИРЕННОГО СПИСКА ФОТОГРАФИЙ (36 ШТУК)
+// =========================================================================
 
-// Дополнительные изображения (все остальные из списка)
-import calendar2 from "./assets/Calendar-2.jpg";
-import charmMetal from "./assets/CharmMetal.jpg";
-import metal from "./assets/metal.jpg";
-import notepad3 from "./assets/Notepad-3.jpg";
-import notepad4 from "./assets/Notepad-4.jpg";
-import notepad5 from "./assets/Notepad-5.jpg";
-import notepad6 from "./assets/Notepad-6.jpg";
-import notepad7 from "./assets/Notepad-7.jpg";
-import tree3 from "./assets/Tree-3.jpg";
-import tree4 from "./assets/Tree-4.jpg";
-import tree5 from "./assets/Tree-5.jpg";
-import tree6 from "./assets/Tree-6.jpg";
-import tree7 from "./assets/Tree-7.jpg";
-import tree8 from "./assets/Tree-8.jpg";
-import tree9 from "./assets/Tree-9.jpg";
-import tree10 from "./assets/Tree-10.jpg";
-import tree11 from "./assets/Tree-11.jpg";
-import tree12 from "./assets/Tree-12.jpg";
-import tree13 from "./assets/Tree-13.jpg";
-import tree14 from "./assets/Tree-14.jpg";
-import tree15 from "./assets/Tree-15.jpg";
-import tree16 from "./assets/Tree-16.jpg";
-import tree from "./assets/Tree.jpg";
+// --- Сувениры из фанеры (5 шт) ---
+import plywood1 from "./assets/Plywood souvenirs/main.jpg";
+import plywood2 from "./assets/Plywood souvenirs/Tree (2).jpg";
+import plywood3 from "./assets/Plywood souvenirs/Tree (5).jpg";
+import plywood4 from "./assets/Plywood souvenirs/Tree (8).jpg";
+import plywood5 from "./assets/Plywood souvenirs/Tree (12).jpg";
 
-// === 2. МАССИВ СО ВСЕМИ РАБОТАМИ (без заглушек) ===
+// --- Гравировка на металле (5 шт) ---
+import metal1 from "./assets/Metal engraving/main.jpg";
+import metal2 from "./assets/Metal engraving/metal (3).jpg";
+import metal3 from "./assets/Metal engraving/metal (6).jpg";
+import metal4 from "./assets/Metal engraving/metal (9).jpg";
+import metal5 from "./assets/Metal engraving/metal (13).jpg";
+
+// --- Разнообразные блокноты (5 шт) ---
+import notebook1 from "./assets/A variety of notebooks/notepad (1).jpg";
+import notebook2 from "./assets/A variety of notebooks/notepad (4).jpg";
+import notebook3 from "./assets/A variety of notebooks/notepad (7).jpg";
+import notebook4 from "./assets/A variety of notebooks/notepad (10).jpg";
+import notebook5 from "./assets/A variety of notebooks/notepad (13).jpg";
+
+// --- Печать книг (3 шт - все, что есть) ---
+import book1 from "./assets/Book printing/book (1).jpg";
+import book2 from "./assets/Book printing/book (2).jpg";
+import book3 from "./assets/Book printing/book (3).jpg";
+
+// --- Визитки и полиграфия (4 шт) ---
+import print1 from "./assets/Business cards and printing/printing (1).jpg";
+import print2 from "./assets/Business cards and printing/printing (2).jpg";
+import print3 from "./assets/Business cards and printing/printing (4).jpg";
+import print4 from "./assets/Business cards and printing/printing (5).jpg";
+
+// --- Печать на белых футболках и кружках (5 шт) ---
+import shirt1 from "./assets/Printing on white T-shirts and mugs/print (1).jpg";
+import shirt2 from "./assets/Printing on white T-shirts and mugs/print (3).jpg";
+import shirt3 from "./assets/Printing on white T-shirts and mugs/print (5).jpg";
+import shirt4 from "./assets/Printing on white T-shirts and mugs/print (6).jpg";
+import shirt5 from "./assets/Printing on white T-shirts and mugs/print (8).jpg";
+
+// --- Брелоки, значки, магниты (5 шт) ---
+import charm1 from "./assets/Production of keychains, badges, and magnets/charm (1).jpg";
+import charm2 from "./assets/Production of keychains, badges, and magnets/charm (3).jpg";
+import charm3 from "./assets/Production of keychains, badges, and magnets/charm (4).jpg";
+import charm4 from "./assets/Production of keychains, badges, and magnets/charm (6).jpg";
+import charm5 from "./assets/Production of keychains, badges, and magnets/charm (7).jpg";
+
+// --- Съедобная печать А4 (4 шт) ---
+import edible1 from "./assets/A4 Edible Print/A4Printing (2).jpg";
+import edible2 from "./assets/A4 Edible Print/A4Printing (3).jpg";
+import edible3 from "./assets/A4 Edible Print/A4Printing (4).jpg";
+import edible4 from "./assets/A4 Edible Print/A4Printing (5).jpg";
+
+// =========================================================================
+// 2. МАССИВ БОЛЬШОЙ ГАЛЕРЕИ РАБОТ (Перемешаны для динамики)
+// =========================================================================
 export const servicesData = [
-  // Уже существующие (1–6)
-  { id: 1, title: "Печать на дереве/металле", image: treeOrMetal },
-  { id: 2, title: "Календарь", image: calendar },
-  { id: 3, title: "Блокнот #1", image: notepad },
-  { id: 4, title: "Блокнот #2", image: notepad2 },
-  { id: 5, title: "Работа по дереву #2", image: tree2 },
-  { id: 6, title: "Визитка", image: businessCard },
+  // Ряд 1
+  { id: 1, title: "Деревянная вывеска", image: plywood1 },
+  { id: 2, title: "Офисная табличка", image: metal1 },
+  { id: 3, title: "Фирменный блокнот", image: notebook1 },
+  { id: 4, title: "Печать книг в переплете", image: book1 },
 
-  // Добавленные новые работы (7–29)
-  { id: 7, title: "Календарь #2", image: calendar2 },
-  { id: 8, title: "Charm Metal", image: charmMetal },
-  { id: 9, title: "Металл", image: metal },
-  { id: 10, title: "Блокнот #3", image: notepad3 },
-  { id: 11, title: "Блокнот #4", image: notepad4 },
-  { id: 12, title: "Блокнот #5", image: notepad5 },
-  { id: 13, title: "Блокнот #6", image: notepad6 },
-  { id: 14, title: "Блокнот #7", image: notepad7 },
-  { id: 15, title: "Дерево #3", image: tree3 },
-  { id: 16, title: "Дерево #4", image: tree4 },
-  { id: 17, title: "Дерево #5", image: tree5 },
-  { id: 18, title: "Дерево #6", image: tree6 },
-  { id: 19, title: "Дерево #7", image: tree7 },
-  { id: 20, title: "Дерево #8", image: tree8 },
-  { id: 21, title: "Дерево #9", image: tree9 },
-  { id: 22, title: "Дерево #10", image: tree10 },
-  { id: 23, title: "Дерево #11", image: tree11 },
-  { id: 24, title: "Дерево #12", image: tree12 },
-  { id: 25, title: "Дерево #13", image: tree13 },
-  { id: 26, title: "Дерево #14", image: tree14 },
-  { id: 27, title: "Дерево #15", image: tree15 },
-  { id: 28, title: "Дерево #16", image: tree16 },
-  { id: 29, title: "Дерево", image: tree },
+  // Ряд 2
+  { id: 5, title: "Рекламные визитки", image: print1 },
+  { id: 6, title: "Принт на футболке", image: shirt1 },
+  { id: 7, title: "Брендированные брелоки", image: charm1 },
+  { id: 8, title: "Кондитерская печать А4", image: edible1 },
+
+  // Ряд 3
+  { id: 9, title: "Сувенир из фанеры", image: plywood2 },
+  { id: 10, title: "Гравировка на металле", image: metal2 },
+  { id: 11, title: "Ежедневник на спирали", image: notebook2 },
+  { id: 12, title: "Печать методических пособий", image: book2 },
+
+  // Ряд 4
+  { id: 13, title: "Фирменные бланки", image: print2 },
+  { id: 14, title: "Кружка с фотопечатью", image: shirt2 },
+  { id: 15, title: "Закатные значки", image: charm2 },
+  { id: 16, title: "Сахарная бумага с принтом", image: edible2 },
+
+  // Ряд 5
+  { id: 17, title: "Изделие из дерева", image: plywood3 },
+  { id: 18, title: "Металлический шильд", image: metal3 },
+  { id: 19, title: "Блокнот в твердой обложке", image: notebook3 },
+  { id: 20, title: "Мягкий переплет брошюр", image: book3 },
+
+  // Ряд 6
+  { id: 21, title: "Печатная полиграфия", image: print3 },
+  { id: 22, title: "Корпоративный мерч", image: shirt3 },
+  { id: 23, title: "Магниты с логотипом", image: charm3 },
+  { id: 24, title: "Вафельная картинка", image: edible3 },
+
+  // Ряд 7
+  { id: 25, title: "Декор из фанеры", image: plywood4 },
+  { id: 26, title: "Наградной диплом", image: metal4 },
+  { id: 27, title: "Уникальный блокнот", image: notebook4 },
+  { id: 28, title: "Информационный буклет", image: print4 },
+
+  // Ряд 8
+  { id: 29, title: "Футболка с логотипом", image: shirt4 },
+  { id: 30, title: "Акриловый брелок", image: charm4 },
+  { id: 31, title: "Пищевая печать для торта", image: edible4 },
+  { id: 32, title: "Подарочная гравировка", image: metal5 },
+
+  // Ряд 9
+  { id: 33, title: "Лазерная резка дерева", image: plywood5 },
+  { id: 34, title: "Дизайнерский блокнот", image: notebook5 },
+  { id: 35, title: "Печать на кружках", image: shirt5 },
+  { id: 36, title: "Сувенирные магниты", image: charm5 },
 ];

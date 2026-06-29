@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { styles } from "./styles.js";
 import { servicesData } from "./servicesData";
-import { productsData } from "./productsData";
+
 import { useEffect } from "react";
 
 import "swiper/css";
@@ -17,6 +17,21 @@ const App = () => {
   const [visibleCount, setVisibleCount] = useState(4);
   const [activeModalImg, setActiveModalImg] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:1337/api/products?populate=*")
+      .then((res) => res.json())
+      .then((response) => {
+        setProducts(response.data || []);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Ошибка загрузки товаров:", err);
+        setLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -173,44 +188,62 @@ const App = () => {
             Что мы печатаем
           </h2>
 
-          <div style={styles.servicesGrid}>
-            {productsData.slice(0, visibleCount).map((item) => (
-              <div
-                key={item.id}
-                style={{
-                  ...styles.serviceCard,
-                  ...styles.serviceCardAnimated,
-                  cursor: "pointer",
-                }}
-                onClick={() => setActiveProduct(item)}
-              >
-                <div style={styles.cardImgWrapper}>
-                  <img
-                    src={item.images && item.images[0]}
-                    alt={item.title}
-                    style={styles.cardImgPlaceholder}
-                  />
-                </div>
-                <h3 style={styles.serviceTitle}>{item.title}</h3>
-                <p style={styles.serviceDesc}>{item.desc}</p>
-                <div style={styles.price}>{item.price}</div>
-                <p
-                  style={{
-                    fontSize: "0.9rem",
-                    backgroundColor: "#f0f0f0",
-                    padding: "4px 8px",
-                    borderRadius: "4px",
-                    color: "#333",
-                    marginTop: "10px",
-                  }}
-                >
-                  нажми чтобы увидеть больше
-                </p>
-              </div>
-            ))}
-          </div>
+          {loading ? (
+            <div
+              style={{ textAlign: "center", padding: "40px", color: "#666" }}
+            >
+              Загрузка каталога...
+            </div>
+          ) : (
+            <div style={styles.servicesGrid}>
+              {/* Меняем productsData на products */}
+              {products.slice(0, visibleCount).map((item) => {
+                // Безопасно вытаскиваем URL первой картинки для превью карточки
+                const mainImgUrl = item.images?.[0]?.url
+                  ? `http://localhost:1337${item.images[0].url}`
+                  : "https://placehold.co/600x400?text=Нет+фото"; // заглушка
 
-          {productsData.length > 4 && (
+                return (
+                  <div
+                    key={item.id}
+                    style={{
+                      ...styles.serviceCard,
+                      ...styles.serviceCardAnimated,
+                      cursor: "pointer",
+                    }}
+                    onClick={() => setActiveProduct(item)}
+                  >
+                    <div style={styles.cardImgWrapper}>
+                      <img
+                        src={mainImgUrl} // Подставляем наш новый URL
+                        alt={item.title}
+                        style={styles.cardImgPlaceholder}
+                      />
+                    </div>
+                    <h3 style={styles.serviceTitle}>{item.title}</h3>
+                    <p style={styles.serviceDesc}>{item.desc}</p>
+                    <div style={styles.price}>{item.price}</div>
+
+                    <p
+                      style={{
+                        fontSize: "0.9rem",
+                        backgroundColor: "#f0f0f0",
+                        padding: "4px 8px",
+                        borderRadius: "4px",
+                        color: "#333",
+                        marginTop: "10px",
+                      }}
+                    >
+                      нажми чтобы увидеть больше
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {/* Кнопка "Показать еще" (меняем productsData на products) */}
+          {products.length > 4 && (
             <div
               style={{
                 display: "flex",
@@ -223,21 +256,22 @@ const App = () => {
                 style={styles.loadMoreBtn}
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (visibleCount < productsData.length) {
+                  if (visibleCount < products.length) {
                     setVisibleCount((prev) => prev + 4);
                   } else {
                     setVisibleCount(4);
                     document
                       .getElementById("catalog-title")
-                      ?.scrollIntoView({ behavior: "smooth" });
+                      .scrollIntoView({ behavior: "smooth" });
                   }
                 }}
               >
-                {visibleCount < productsData.length ? "Показать еще" : "Скрыть"}
+                {visibleCount < products.length ? "Показать еще" : "Скрыть"}
               </button>
             </div>
           )}
 
+          {/* Модальное окно (Swiper) */}
           {activeProduct && (
             <div
               style={{
@@ -306,14 +340,14 @@ const App = () => {
                 >
                   <Swiper
                     modules={[Navigation]}
-                    navigation={activeProduct.images.length > 1}
+                    navigation={activeProduct.images?.length > 1}
                     spaceBetween={10}
                     slidesPerView={1}
                     style={{ width: "100%", height: "100%" }}
                   >
-                    {activeProduct.images.map((imgUrl, index) => (
+                    {activeProduct.images?.map((img, index) => (
                       <SwiperSlide
-                        key={index}
+                        key={img.id || index}
                         style={{
                           display: "flex",
                           justifyContent: "center",
@@ -321,7 +355,7 @@ const App = () => {
                         }}
                       >
                         <img
-                          src={imgUrl}
+                          src={`http://localhost:1337${img.url}`}
                           alt={`${activeProduct.title} - фото ${index + 1}`}
                           style={{
                             maxWidth: "100%",
